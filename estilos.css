@@ -1,0 +1,379 @@
+:root {
+      --bg-primary: #0f0c29;
+      --bg-secondary: #302b63;
+      --accent: #ffd700;
+      --accent-light: #ffed4e;
+      --text: #fff;
+      --dark: #1a1a1a;
+      --darker: #2a2a2a;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, var(--bg-primary), var(--bg-secondary), #24243e);
+      color: var(--text);
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+    }
+
+    .container {
+      background: rgba(28, 28, 28, 0.95);
+      padding: 30px;
+      border-radius: 20px;
+      width: 100%;
+      max-width: 900px;
+      box-shadow: 0 10px 50px rgba(0,0,0,0.8);
+      backdrop-filter: blur(10px);
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 2.5em;
+      margin-bottom: 20px;
+      background: linear-gradient(135deg, var(--accent), var(--accent-light));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-shadow: 0 0 30px rgba(255, 215, 0, 0.3);
+    }
+
+    .screen { display: none; }
+    .screen.active { display: block; animation: fadeIn 0.5s ease; }
+
+    .instructions {
+      background: var(--darker);
+      padding: 25px;
+      border-radius: 15px;
+      margin: 20px 0;
+      line-height: 1.8;
+    }
+
+    .instructions h2 {
+      color: var(--accent);
+      margin-bottom: 15px;
+      font-size: 1.5em;
+    }
+
+    .instructions li {
+      margin: 10px 0;
+      padding-left: 25px;
+      position: relative;
+    }
+
+    .instructions li:before {
+      content: "🎯";
+      position: absolute;
+      left: 0;
+    }
+
+    label {
+      display: block;
+      margin-top: 15px;
+      margin-bottom: 5px;
+      font-weight: bold;
+      color: var(--accent-light);
+    }
+
+    select, input[type="text"] {
+      width: 100%;
+      padding: 15px;
+      border-radius: 10px;
+      background: var(--dark);
+      color: var(--text);
+      border: 2px solid #444;
+      font-size: 1.1em;
+      margin-bottom: 15px;
+      transition: border-color 0.3s;
+    }
+
+    select:focus, input:focus {
+      outline: none;
+      border-color: var(--accent);
+    }
+
+    .stats {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+
+    .stat-item {
+      background: var(--darker);
+      padding: 15px 20px;
+      border-radius: 10px;
+      text-align: center;
+      flex: 1;
+      min-width: 120px;
+    }
+
+    .stat-label { color: #999; font-size: 0.9em; margin-bottom: 5px; }
+    .stat-value { color: var(--accent); font-size: 1.5em; font-weight: bold; }
+
+    .progress-bar {
+      background: var(--darker);
+      height: 30px;
+      border-radius: 15px;
+      overflow: hidden;
+      margin-bottom: 20px;
+    }
+
+    .progress-fill {
+      background: linear-gradient(90deg, var(--accent), var(--accent-light));
+      height: 100%;
+      width: 0;
+      transition: width 0.5s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      color: #000;
+    }
+
+    .clue-container {
+      background: linear-gradient(135deg, var(--darker), var(--dark));
+      padding: 30px;
+      border-radius: 15px;
+      margin: 20px 0;
+      text-align: center;
+      min-height: 120px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 2px solid var(--accent);
+      box-shadow: 0 0 20px rgba(255, 215, 0, 0.2);
+    }
+
+    .clue-text { font-size: 1.8em; line-height: 1.5; }
+
+    .difficulty-badge {
+      display: inline-block;
+      padding: 5px 15px;
+      border-radius: 20px;
+      font-size: 0.9em;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    .difficulty-easy { background: #4caf50; color: white; }
+    .difficulty-medium { background: #ff9800; color: white; }
+    .difficulty-hard { background: #f44336; color: white; }
+
+    .clues-used {
+      text-align: center;
+      margin: 15px 0;
+      color: #999;
+    }
+
+    .clue-dot {
+      display: inline-block;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: #444;
+      margin: 0 5px;
+      transition: all 0.3s;
+    }
+
+    .clue-dot.used {
+      background: var(--accent);
+      box-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+    }
+
+    .button-group {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 15px;
+      flex-wrap: wrap;
+    }
+
+    button {
+      flex: 1;
+      min-width: 150px;
+      background: linear-gradient(135deg, var(--accent), var(--accent-light));
+      border: none;
+      padding: 15px 25px;
+      border-radius: 10px;
+      cursor: pointer;
+      font-weight: bold;
+      font-size: 1em;
+      color: #000;
+      transition: all 0.3s;
+      box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
+    }
+
+    button:hover:not(:disabled) {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(255, 215, 0, 0.5);
+    }
+
+    button:disabled {
+      background: #444;
+      cursor: not-allowed;
+      opacity: 0.6;
+      transform: none;
+      box-shadow: none;
+    }
+
+    .btn-secondary {
+      background: linear-gradient(135deg, #666, #888);
+    }
+
+    .btn-danger {
+      background: linear-gradient(135deg, #f44336, #e91e63);
+    }
+
+    .btn-full { width: 100%; }
+    .btn-large { padding: 20px; font-size: 1.3em; }
+
+    .message {
+      text-align: center;
+      margin-top: 15px;
+      padding: 15px;
+      border-radius: 10px;
+      font-weight: bold;
+      font-size: 1.2em;
+      display: none;
+    }
+
+    .message.show { display: block; animation: shake 0.5s; }
+
+    .message.correct { background: rgba(0,255,0,0.2); color: #0f0; border: 2px solid #0f0; }
+    .message.incorrect { background: rgba(255,0,0,0.2); color: #f55; border: 2px solid #f55; }
+    .message.hint { background: rgba(255,215,0,0.2); color: var(--accent); border: 2px solid var(--accent); }
+
+    .final-stats {
+      background: var(--darker);
+      padding: 30px;
+      border-radius: 15px;
+      margin: 20px 0;
+      text-align: center;
+    }
+
+    .final-stats h2 {
+      color: var(--accent);
+      margin-bottom: 20px;
+      font-size: 2em;
+    }
+
+    .final-stat {
+      margin: 15px 0;
+      font-size: 1.3em;
+    }
+
+    #timerDisplay {
+      text-align: center;
+      font-size: 1.4em;
+      margin: 10px 0;
+      color: var(--accent);
+      font-weight: bold;
+    }
+
+    #timerDisplay.warning {
+      color: #ff5722;
+      animation: pulse 1s infinite;
+    }
+
+    .settings-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 15px;
+      margin: 20px 0;
+    }
+
+    .lives-display {
+      text-align: center;
+      margin: 10px 0;
+      font-size: 1.5em;
+    }
+
+    .life-heart {
+      display: inline-block;
+      margin: 0 5px;
+      transition: all 0.3s;
+    }
+
+    .life-heart.lost {
+      opacity: 0.3;
+      filter: grayscale(100%);
+    }
+
+    .achievements {
+      margin-top: 20px;
+      padding: 15px;
+      background: var(--dark);
+      border-radius: 10px;
+    }
+
+    .achievement {
+      display: inline-block;
+      background: linear-gradient(135deg, #9c27b0, #673ab7);
+      padding: 8px 15px;
+      border-radius: 20px;
+      margin: 5px;
+      font-size: 0.9em;
+      animation: bounce 0.5s;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes shake {
+      0%, 100% { transform: translateX(0); }
+      25% { transform: translateX(-10px); }
+      75% { transform: translateX(10px); }
+    }
+
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+
+    @media (max-width: 700px) {
+      h1 { font-size: 1.8em; }
+      .clue-text { font-size: 1.4em; }
+      .button-group { flex-direction: column; }
+      button { min-width: 100%; }
+      .settings-grid { grid-template-columns: 1fr; }
+    }
+	
+	.achievements {
+  margin-top: 30px;
+  padding: 20px;
+  background: var(--darker);
+  border-radius: 15px;
+  text-align: center;
+}
+
+.achievements h3 {
+  color: var(--accent);
+  margin-bottom: 15px;
+}
+
+.achievement {
+  display: inline-block;
+  background: linear-gradient(135deg, #9c27b0, #673ab7);
+  color: white;
+  padding: 10px 20px;
+  border-radius: 30px;
+  margin: 8px;
+  font-weight: bold;
+  box-shadow: 0 4px 15px rgba(156, 39, 176, 0.4);
+  animation: bounce 0.6s;
+}

@@ -1,343 +1,87 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="estilos.css">
   <title>Adivina la Película 🎬</title>
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
-      color: #fff;
-      min-height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      padding: 20px;
-    }
-    .container {
-      background: rgba(28, 28, 28, 0.95);
-      padding: 30px;
-      border-radius: 20px;
-      width: 100%;
-      max-width: 800px;
-      box-shadow: 0 10px 50px rgba(0,0,0,0.8);
-      backdrop-filter: blur(10px);
-    }
-    h1 {
-      text-align: center;
-      font-size: 2.5em;
-      margin-bottom: 20px;
-      background: linear-gradient(135deg, #ffd700, #ffed4e);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      text-shadow: 0 0 30px rgba(255, 215, 0, 0.3);
-    }
-    
-    /* Pantalla de inicio */
-    .start-screen {
-      text-align: center;
-    }
-    .instructions {
-      background: #2a2a2a;
-      padding: 25px;
-      border-radius: 15px;
-      margin: 20px 0;
-      line-height: 1.8;
-      text-align: left;
-    }
-    .instructions h2 {
-      color: #ffd700;
-      margin-bottom: 15px;
-      font-size: 1.5em;
-    }
-    .instructions ul {
-      list-style: none;
-      padding-left: 0;
-    }
-    .instructions li {
-      margin: 10px 0;
-      padding-left: 25px;
-      position: relative;
-    }
-    .instructions li:before {
-      content: "🎯";
-      position: absolute;
-      left: 0;
-    }
-    
-    select {
-      width: 100%;
-      padding: 15px;
-      border-radius: 10px;
-      background: #1a1a1a;
-      color: #fff;
-      border: 2px solid #444;
-      font-size: 1.1em;
-      margin: 20px 0;
-    }
-    select:focus {
-      outline: none;
-      border-color: #ffd700;
-    }
-    
-    /* Pantalla de juego */
-    .game-screen {
-      display: none;
-    }
-    .stats {
-      display: flex;
-      justify-content: space-around;
-      margin-bottom: 20px;
-      flex-wrap: wrap;
-      gap: 10px;
-    }
-    .stat-item {
-      background: #2a2a2a;
-      padding: 15px 20px;
-      border-radius: 10px;
-      text-align: center;
-      flex: 1;
-      min-width: 120px;
-    }
-    .stat-label {
-      color: #999;
-      font-size: 0.9em;
-      margin-bottom: 5px;
-    }
-    .stat-value {
-      color: #ffd700;
-      font-size: 1.5em;
-      font-weight: bold;
-    }
-    
-    .progress-bar {
-      background: #2a2a2a;
-      height: 30px;
-      border-radius: 15px;
-      overflow: hidden;
-      margin-bottom: 20px;
-    }
-    .progress-fill {
-      background: linear-gradient(90deg, #ffd700, #ffed4e);
-      height: 100%;
-      transition: width 0.5s ease;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: bold;
-      color: #000;
-    }
-    
-    .clue-container {
-      background: linear-gradient(135deg, #2a2a2a, #1a1a1a);
-      padding: 30px;
-      border-radius: 15px;
-      margin: 20px 0;
-      text-align: center;
-      min-height: 120px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border: 2px solid #ffd700;
-      box-shadow: 0 0 20px rgba(255, 215, 0, 0.2);
-    }
-    .clue-text {
-      font-size: 1.8em;
-      line-height: 1.5;
-    }
-    
-    .clues-used {
-      text-align: center;
-      margin: 15px 0;
-      color: #999;
-    }
-    .clue-dot {
-      display: inline-block;
-      width: 12px;
-      height: 12px;
-      border-radius: 50%;
-      background: #444;
-      margin: 0 5px;
-      transition: all 0.3s;
-    }
-    .clue-dot.used {
-      background: #ffd700;
-      box-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
-    }
-    
-    input {
-      width: 100%;
-      padding: 15px;
-      border-radius: 10px;
-      border: 2px solid #444;
-      background: #1a1a1a;
-      color: #fff;
-      font-size: 1.1em;
-      margin-bottom: 15px;
-      transition: border-color 0.3s;
-    }
-    input:focus {
-      outline: none;
-      border-color: #ffd700;
-    }
-    
-    .button-group {
-      display: flex;
-      gap: 10px;
-      margin-bottom: 15px;
-      flex-wrap: wrap;
-    }
-    button {
-      flex: 1;
-      min-width: 150px;
-      background: linear-gradient(135deg, #ffd700, #ffed4e);
-      border: none;
-      padding: 15px 25px;
-      border-radius: 10px;
-      cursor: pointer;
-      font-weight: bold;
-      font-size: 1em;
-      color: #000;
-      transition: all 0.3s;
-      box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
-    }
-    button:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 6px 20px rgba(255, 215, 0, 0.5);
-    }
-    button:active {
-      transform: translateY(0);
-    }
-    button:disabled {
-      background: #444;
-      cursor: not-allowed;
-      transform: none;
-      box-shadow: none;
-    }
-    .btn-secondary {
-      background: linear-gradient(135deg, #666, #888);
-    }
-    .btn-secondary:hover {
-      box-shadow: 0 6px 20px rgba(136, 136, 136, 0.5);
-    }
-    
-    .message {
-      text-align: center;
-      margin-top: 15px;
-      padding: 15px;
-      border-radius: 10px;
-      font-weight: bold;
-      font-size: 1.2em;
-      transition: all 0.3s;
-    }
-    .message.correct {
-      background: rgba(0, 255, 0, 0.2);
-      color: #0f0;
-      border: 2px solid #0f0;
-    }
-    .message.incorrect {
-      background: rgba(255, 0, 0, 0.2);
-      color: #f55;
-      border: 2px solid #f55;
-    }
-    .message.hint {
-      background: rgba(255, 215, 0, 0.2);
-      color: #ffd700;
-      border: 2px solid #ffd700;
-    }
-    
-    /* Pantalla final */
-    .final-screen {
-      display: none;
-      text-align: center;
-    }
-    .final-stats {
-      background: #2a2a2a;
-      padding: 30px;
-      border-radius: 15px;
-      margin: 20px 0;
-    }
-    .final-stats h2 {
-      color: #ffd700;
-      margin-bottom: 20px;
-      font-size: 2em;
-    }
-    .final-stat {
-      margin: 15px 0;
-      font-size: 1.3em;
-    }
-    
-    /* Animaciones */
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-    .fade-in {
-      animation: fadeIn 0.5s ease;
-    }
-    
-    @media (max-width: 600px) {
-      h1 { font-size: 1.8em; }
-      .clue-text { font-size: 1.4em; }
-      .button-group { flex-direction: column; }
-      button { min-width: 100%; }
-    }
-  </style>
 </head>
 <body>
   <div class="container">
     <!-- Pantalla de inicio -->
-    <div class="start-screen" id="startScreen">
+    <div class="screen active" id="startScreen">
       <h1>🎬 Adivina la Película 🎬</h1>
       <div class="instructions">
         <h2>📖 Cómo jugar</h2>
         <ul>
-          <li><strong>Objetivo:</strong> Adivina el título de la película con el menor número de pistas posible</li>
-          <li><strong>Pistas disponibles:</strong> Cada película tiene 6 pistas que van de más difícil a más fácil (la última es el año de estreno)</li>
-          <li><strong>Puntuación:</strong> Ganas puntos según con cuántas pistas adivines (6 puntos máximo por película)</li>
-          <li><strong>Tip:</strong> Intenta adivinar con la primera pista para obtener la máxima puntuación</li>
-          <li><strong>Total disponible:</strong> 100 películas para adivinar (elige cuántas jugar, orden aleatorio)</li>
+          <li><strong>Objetivo:</strong> Adivina el título con el menor número de pistas</li>
+          <li><strong>Pistas:</strong> 6 pistas por película (de difícil a fácil)</li>
+          <li><strong>Puntos:</strong> Máximo 6 por película (menos pistas = más puntos)</li>
+          <li><strong>Géneros:</strong> Elige entre 150+ películas de diferentes géneros</li>
+          <li><strong>Logros:</strong> Desbloquea logros especiales</li>
         </ul>
       </div>
-      
-      <label for="numMovies"><strong>¿Cuántas películas quieres jugar?</strong></label>
-      <select id="numMovies">
-		<option value="5">5 películas</option>
-        <option value="10">10 películas</option>
-        <option value="20">20 películas</option>
-        <option value="30">30 películas</option>
-        <option value="50">50 películas</option>
-        <option value="75">75 películas</option>
-        <option value="100" selected>Todas (100 películas)</option>
-      </select>
-	  
-	  <label for="gameMode"><strong>🎮 Modo de juego</strong></label>
-	  <select id="gameMode">
-		<option value="classic">🟢 Clásico</option>
-		<option value="hardcore">🔴 Hardcore (PRO)</option>
-		<option value="arcade">🔵 Arcade (PRO)</option>
-	  </select>
 
-      
-      <button onclick="startGame()" style="width: 100%; padding: 20px; font-size: 1.3em;">
-        🎮 Comenzar Juego
-      </button>
+      <div class="settings-grid">
+        <div>
+          <label for="numMovies">🎯 Número de películas</label>
+          <select id="numMovies">
+            <option value="5">5 películas</option>
+            <option value="10" selected>10 películas</option>
+            <option value="20">20 películas</option>
+            <option value="30">30 películas</option>
+            <option value="50">50 películas</option>
+          </select>
+        </div>
+
+        <div>
+          <label for="gameMode">🎮 Modo de juego</label>
+          <select id="gameMode">
+            <option value="classic">🟢 Clásico</option>
+            <option value="hardcore">🔴 Hardcore (1 error = fin)</option>
+            <option value="arcade">🔵 Arcade (20s por película)</option>
+            <option value="survival">💀 Supervivencia (3 vidas)</option>
+            <option value="perfectionist">⭐ Perfeccionista (solo 1ra pista)</option>
+          </select>
+        </div>
+
+        <div>
+          <label for="genreFilter">🎭 Género</label>
+          <select id="genreFilter">
+            <option value="all">Todos los géneros</option>
+            <option value="accion">🔥 Acción</option>
+            <option value="animacion">🎨 Animación</option>
+            <option value="ciencia-ficcion">🚀 Ciencia Ficción</option>
+            <option value="comedia">😂 Comedia</option>
+            <option value="drama">🎭 Drama</option>
+            <option value="terror">👻 Terror</option>
+            <option value="clasicos">🎞️ Clásicos</option>
+            <option value="superheroes">🦸 Superhéroes</option>
+          </select>
+        </div>
+
+        <div>
+          <label for="difficulty">⚡ Dificultad</label>
+          <select id="difficulty">
+            <option value="all">Todas</option>
+            <option value="easy">🟢 Fácil</option>
+            <option value="medium">🟡 Media</option>
+            <option value="hard">🔴 Difícil</option>
+          </select>
+        </div>
+      </div>
+
+      <button class="btn-full btn-large" id="startBtn">🎮 Comenzar Juego</button>
     </div>
 
     <!-- Pantalla de juego -->
-    <div class="game-screen" id="gameScreen">
+    <div class="screen" id="gameScreen">
       <h1>🎬 Adivina la Película</h1>
-      
+
       <div class="stats">
         <div class="stat-item">
           <div class="stat-label">Nivel</div>
-          <div class="stat-value" id="levelDisplay">1/100</div>
+          <div class="stat-value" id="levelDisplay">1/10</div>
         </div>
         <div class="stat-item">
           <div class="stat-label">Puntuación</div>
@@ -347,381 +91,66 @@
           <div class="stat-label">Aciertos</div>
           <div class="stat-value" id="correctDisplay">0</div>
         </div>
+        <div class="stat-item">
+          <div class="stat-label">Racha</div>
+          <div class="stat-value" id="streakDisplay">0🔥</div>
+        </div>
       </div>
+
+      <div id="livesDisplay" class="lives-display"></div>
+      <div id="timerDisplay">⏱ Tiempo: <span id="timer">20</span>s</div>
 
       <div class="progress-bar">
         <div class="progress-fill" id="progressBar">0%</div>
       </div>
 
-      <div class="clue-container fade-in">
-        <div class="clue-text" id="clueText">🎬</div>
+      <div id="difficultyBadge" class="difficulty-badge difficulty-easy"></div>
+
+      <div class="clue-container">
+        <div class="clue-text" id="clueText">¡Presiona el botón para ver la primera pista!</div>
       </div>
 
       <div class="clues-used">
-        <span>Pistas usadas: </span>
-        <span class="clue-dot" id="dot1"></span>
-        <span class="clue-dot" id="dot2"></span>
-        <span class="clue-dot" id="dot3"></span>
-        <span class="clue-dot" id="dot4"></span>
-        <span class="clue-dot" id="dot5"></span>
-        <span class="clue-dot" id="dot6"></span>
+        Pistas usadas:
+        <span class="clue-dot" data-index="0"></span>
+        <span class="clue-dot" data-index="1"></span>
+        <span class="clue-dot" data-index="2"></span>
+        <span class="clue-dot" data-index="3"></span>
+        <span class="clue-dot" data-index="4"></span>
+        <span class="clue-dot" data-index="5"></span>
       </div>
 
-      <input 
-        type="text" 
-        id="answerInput" 
-        placeholder="Escribe el título de la película..." 
-        onkeypress="if(event.key==='Enter') checkAnswer()"
-      />
+      <input type="text" id="answerInput" placeholder="Escribe el título de la película..." autocomplete="off">
 
       <div class="button-group">
-        <button onclick="checkAnswer()">✅ Comprobar</button>
-        <button class="btn-secondary" onclick="nextClue()" id="clueBtn">💡 Siguiente Pista</button>
+        <button id="checkBtn">✅ Comprobar</button>
+        <button id="clueBtn">💡 Siguiente Pista</button>
       </div>
 
-     <button class="btn-secondary" onclick="skipMovieManual()" style="width: 100%;">
-		⏭️ Saltar Película
-	 </button>
+      <div class="button-group">
+        <button class="btn-secondary" id="skipBtn">⏭️ Saltar</button>
+        <button class="btn-danger" id="giveUpBtn">🏳️ Rendirse</button>
+      </div>
 
       <div class="message" id="message"></div>
     </div>
 
     <!-- Pantalla final -->
-    <div class="final-screen" id="finalScreen">
-      <h1>🏆 ¡Juego Completado! 🏆</h1>
+    <div class="screen" id="finalScreen">
+      <h1 id="finalTitle">🏆 ¡Juego Completado! 🏆</h1>
       <div class="final-stats">
         <h2>Tus Estadísticas</h2>
-        <div class="final-stat">🎯 Películas acertadas: <span id="finalCorrect">0</span>/<span id="totalPlayed">0</span></div>
-        <div class="final-stat">⭐ Puntuación total: <span id="finalScore">0</span>/<span id="maxPossible">0</span></div>
-        <div class="final-stat">💡 Promedio de pistas: <span id="avgClues">0</span></div>
-        <div class="final-stat" id="performance"></div>
+        <div class="final-stat">🎯 Acertadas: <span id="finalCorrect">0</span>/<span id="totalPlayed">0</span> (<span id="accuracy">0</span>%)</div>
+        <div class="final-stat">⭐ Puntuación: <span id="finalScore">0</span>/<span id="maxPossible">0</span></div>
+        <div class="final-stat">💡 Promedio pistas: <span id="avgClues">0</span></div>
+        <div class="final-stat">🔥 Racha máxima: <span id="maxStreak">0</span></div>
+        <div class="final-stat" id="performance">¡Buen trabajo!</div>
+        <div id="achievements" class="achievements"></div>
       </div>
-      <button onclick="restartGame()" style="width: 100%; padding: 20px; font-size: 1.3em;">
-        🔄 Jugar de Nuevo
-      </button>
+      <button class="btn-full btn-large" id="restartBtn">🔄 Jugar de Nuevo</button>
     </div>
   </div>
 
-  <script>
-    const allMovies = [
-      { title: "Titanic", alt: [], clues: ["🚢❄️❤️","Un barco famoso se hunde","Historia de amor trágica en 1912","Jack y Rose en la proa","Soy el rey del ___","1997"]},
-      { title: "El Rey León", alt: [], clues: ["🦁👑","Animales en África","Un príncipe huye tras una tragedia","Hakuna Matata","Recuerda quién ___","1994"]},
-      { title: "Matrix", alt: [], clues: ["💊🕶️","Realidad virtual","Humanos conectados a máquinas","Pastilla roja o azul","No es la cuchara lo que se ___","1999"]},
-      { title: "Origen", alt: ["El Origen", "Inception"], clues: ["🌀⏳","Sueños dentro de sueños","Robar ideas del subconsciente","Una peonza que gira","¿Estás ___?","2010"]},
-      { title: "Blade Runner", alt: ["Corredor de Naves"], clues: ["🌧️🤖","Futuro distópico lluvioso","Cazador de replicantes","¿Qué es ser humano?","Lágrimas en la ___","1982"]},
-      { title: "El Padrino", alt: ["The Godfather"], clues: ["🤵🔫","Familia mafiosa italiana","Poder y lealtad","Corleone","Le haré una oferta que no podrá ___","1972"]},
-      { title: "Regreso al Futuro", alt: ["Volver al Futuro", "Back to the Future"], clues: ["🚗⚡⏰","DeLorean plateado","Viaje a 1955","Doc Brown y Marty","88 millas por ___","1985"]},
-      { title: "Jurassic Park", alt: ["Parque Jurásico"], clues: ["🦖🏝️","Parque de atracciones peligroso","Dinosaurios clonados","Científicos atrapados","La vida encuentra su ___","1993"]},
-      { title: "Gladiador", alt: ["Gladiator"], clues: ["⚔️🏟️","Coliseo romano","General busca venganza","Máximo Décimo Meridio","¿No os estáis ___?","2000"]},
-      { title: "El Club de la Lucha", alt: ["Fight Club", "Club de Pelea"], clues: ["🥊🧠","Insomne conoce a alguien","Club clandestino","Tyler Durden","La primera regla es no ___","1999"]},
-      { title: "Interestelar", alt: ["Interstellar"], clues: ["🌌👨‍🚀","Agujeros de gusano","Salvar a la humanidad","Cooper y su hija","No te vayas ___","2014"]},
-      { title: "Forrest Gump", alt: [], clues: ["🏃‍♂️🍫","Hombre simple, vida extraordinaria","Corre por América","Jenny y Bubba","La vida es como una caja de ___","1994"]},
-      { title: "Pulp Fiction", alt: ["Tiempos Violentos"], clues: ["💼🔫","Historias entrelazadas","Maletín misterioso","Vincent y Jules","Di qué otra ___","1994"]},
-      { title: "El Silencio de los Corderos", alt: ["El Silencio de los Inocentes", "The Silence of the Lambs"], clues: ["🦋😱","Agente del FBI novata","Consulta a un asesino","Hannibal Lecter","Buenos días, ___","1991"]},
-      { title: "Avatar", alt: [], clues: ["🌳💙","Luna Pandora","Nativos azules Na'vi","Conexión con la naturaleza","Veo a ___","2009"]},
-      { title: "La Guerra de las Galaxias", alt: ["Star Wars"], clues: ["🌌⚔️","Galaxia muy lejana","Jedi y Sith","Luke Skywalker","Yo soy tu ___","1977"]},
-      { title: "El Resplandor", alt: ["The Shining"], clues: ["🏨🪓","Hotel Overlook aislado","Familia en invierno","Escritor enloquece","Aquí está ___","1980"]},
-      { title: "Toy Story", alt: [], clues: ["🤠🚀","Juguetes cobran vida","Vaquero y astronauta","Andy se va","Hay una serpiente en mi ___","1995"]},
-      { title: "E.T. el extraterrestre", alt: ["ET"], clues: ["👽🚲","Niño encuentra alienígena","Amistad especial","Dedo luminoso","E.T. teléfono mi ___","1982"]},
-      { title: "El Sexto Sentido", alt: ["Sexto Sentido", "The Sixth Sense"], clues: ["👻👦","Niño ve muertos","Psicólogo infantil","Gran giro final","Veo gente ___","1999"]},
-      { title: "Los Increíbles", alt: ["The Incredibles"], clues: ["🦸‍♂️👨‍👩‍👧‍👦","Familia de superhéroes","Retirados en suburbia","Síndrome el villano","Sin capas ___","2004"]},
-      { title: "Shrek", alt: [], clues: ["👹🏰","Ogro verde en pantano","Rescata princesa","Burro parlanchín","Los ogros son como las ___","2001"]},
-      { title: "Buscando a Nemo", alt: ["Finding Nemo"], clues: ["🐠🌊","Pez payaso perdido","Padre sobreprotector","Dory olvidadiza","Sigue ___","2003"]},
-      { title: "Harry Potter", alt: [], clues: ["⚡🧙‍♂️","Niño mago huérfano","Escuela Hogwarts","Lord Voldemort","El niño que ___","2001"]},
-      { title: "El Caballero Oscuro", alt: ["El Caballero de la Noche", "Batman El Caballero de la Noche", "The Dark Knight"], clues: ["🦇🃏","Vigilante de Gotham","Villano caótico","Harvey Dent","¿Por qué tan ___?","2008"]},
-      { title: "Los Vengadores", alt: ["The Avengers", "Avengers"], clues: ["🦸‍♂️🦸‍♀️","Superhéroes se unen","Amenaza alienígena","Iron Man lidera","Juntos son los ___","2012"]},
-      { title: "Coco", alt: [], clues: ["💀🎸","Día de Muertos","Niño músico","Tierra de los muertos","Recuerda a tus ___","2017"]},
-      { title: "El Señor de los Anillos", alt: ["The Lord of the Rings"], clues: ["💍🗻","Tierra Media épica","Destruir anillo único","Frodo y Sam","Un anillo para ___","2001"]},
-      { title: "Yo Robot", alt: ["I Robot"], clues: ["🤖👮","Tres leyes robóticas","Detective en 2035","Asimov","¿Puede soñar un ___?","2004"]},
-      { title: "500 Días con Ella", alt: ["500 Days of Summer"], clues: ["💔📅","Amor no correspondido","Arquitecto y secretaria","Días numerados","No es una historia de ___","2009"]},
-      { title: "El Laberinto del Fauno", alt: ["Pan's Labyrinth"], clues: ["🧚‍♀️🌙","España posguerra","Niña y criaturas","Guillermo del Toro","Elige bien, princesa ___","2006"]},
-      { title: "Amélie", alt: ["Amelie"], clues: ["☕🎨","Chica francesa soñadora","París colorido","Ayuda a otros","Pequeños placeres de la ___","2001"]},
-      { title: "Kill Bill", alt: [], clues: ["⚔️💛","Venganza sangrienta","Novia asesina","Espada samurái","Mi nombre es ___","2003"]},
-      { title: "V de Vendetta", alt: ["V for Vendetta"], clues: ["🎭💣","Distopía británica","Máscara Guy Fawkes","Revolución","Recuerda, recuerda el 5 de ___","2005"]},
-      { title: "La La Land", alt: [], clues: ["🎵💃","Jazz y sueños","Los Ángeles","Romance musical","City of ___","2016"]},
-      { title: "Mary Poppins", alt: [], clues: ["☂️👜","Niñera mágica","Londres victoriano","Supercalifragilisticoespialidoso","Una cucharada de ___","1964"]},
-      { title: "Princesa por Sorpresa", alt: ["El Diario de la Princesa", "The Princess Diaries"], clues: ["👑📓","Adolescente normal","Descubre su realeza","Genovia","Mi abuela es la ___","2001"]},
-      { title: "Parásitos", alt: ["Parasite", "Gisaengchung"], clues: ["🏠💰","Familia pobre infiltra rica","Sótano secreto","Oscar sorpresa","¿Hueles eso?","2019"]},
-      { title: "El Pianista", alt: ["The Pianist"], clues: ["🎹🇵🇱","Músico judío en Varsovia","Supervivencia en la guerra","Adrien Brody","Toca para vivir","2002"]},
-      { title: "Cadena Perpetua", alt: ["The Shawshank Redemption"], clues: ["🏭🔒","Prisión injusta","Amistad y esperanza","Andy y Red","Escapa a ___","1994"]},
-      { title: "Up", alt: [], clues: ["🏡🎈","Viejo viaja en casa voladora","Niño explorador","Paraíso Falls","Aventura prometida","2009"]},
-      { title: "Wall-E", alt: [], clues: ["🤖🗑️","Robot solitario limpia Tierra","Encuentra planta","Aventura espacial","Hola ___","2008"]},
-      { title: "Spirited Away", alt: ["El viaje de Chihiro"], clues: ["👻🌸","Niña en mundo espíritus","Trabaja en baño","Sin nombre","Come comida del ___","2001"]},
-      { title: "Oppenheimer", alt: [], clues: ["💣🔬","Padre de la bomba atómica","Proyecto Manhattan","Trinidad","Ahora soy la muerte","2023"]},
-      { title: "Dune", alt: [], clues: ["🏜️🐛","Planeta Arrakis","Especia y gusanos","Paul Atreides","El miedo mata la ___","2021"]},
-      { title: "Mad Max: Fury Road", alt: ["Mad Max"], clues: ["🚗🔥","Persecución postapocalíptica","Citadel y agua","Furiosa","Qué día tan ___","2015"]},
-      { title: "Whiplash", alt: [], clues: ["🥁🎺","Alumno y profesor obsesivo","No mi tempo","Sangre en baquetas","¿Te apresuras o arrastras?","2014"]},
-      { title: "Gran Torino", alt: [], clues: ["🚗🇺🇸","Veterano gruñón","Amistad con vecinos","Clint Eastwood","Get off my ___","2008"]},
-      { title: "El Gran Dictador", alt: ["The Great Dictator"], clues: ["🗣️🌍","Sátira a Hitler","Barbero judío","Discurso final","Paz para la ___","1940"]},
-      { title: "Casablanca", alt: [], clues: ["✈️🍸","Amor en tiempos de guerra","Rick y Ilsa","Play it again, Sam","Aquí nos tenemos ___","1942"]},
-      { title: "Seven", alt: ["Se7en"], clues: ["🕵️📦","Siete pecados capitales","¿Qué hay en la caja?","Brad Pitt y Morgan Freeman","¿Qué tiene en la ___?","1995"]},
-      { title: "Joker", alt: [], clues: ["🃏😂","Comediante vuelve villano","Escaleras bailando","Sociedad rota","Ponte una cara ___","2019"]},
-      { title: "Ciudadano Kane", alt: ["Citizen Kane"], clues: ["📰🥀","Magnate de prensa","Trineo infantil","Orson Welles","___","1941"]},
-      { title: "Lo que el viento se llevó", alt: ["Gone with the Wind"], clues: ["🔥🏰","Guerra civil americana","Escarlata y Rhett","Plantación Tara","Francamente querida, me importa un ___","1939"]},
-      { title: "Psicosis", alt: ["Psycho"], clues: ["🚿🔪","Motel Bates","Ducha famosa","Norman y su madre","Un chico muy de su ___","1960"]},
-      { title: "2001: Una odisea del espacio", alt: ["2001: A Space Odyssey"], clues: ["🌌🤖","Monolito negro","HAL 9000","Kubrick","Estoy asustado, ___","1968"]},
-      { title: "El exorcista", alt: ["The Exorcist"], clues: ["😈🛏️","Poseída girando cabeza","Pazuzu","Padre exorcista","El poder de Cristo te ___","1973"]},
-      { title: "Uno de los nuestros", alt: ["Goodfellas"], clues: ["🔫🍝","Mafia italoamericana","Henry Hill","Desde que recuerdo, quise ser ___","1990"]},
-      { title: "La lista de Schindler", alt: ["Schindler's List"], clues: ["⚫⚪🕍","Holocausto","Fabrico salva judíos","Oskar Schindler","Quien salva una vida salva el ___","1993"]},
-      { title: "El bueno, el feo y el malo", alt: ["The Good, the Bad and the Ugly"], clues: ["🤠💰","Oeste spaghetti","Cementerio tesoro","Clint Eastwood","Cuando matas, mata bien ___","1966"]},
-      { title: "Inside Out", alt: ["Del revés", "Intensamente"], clues: ["🧠😢","Emociones en cabeza niña","Alegría y Tristeza","Islas personalidad","Llorar ayuda a ___","2015"]},
-      { title: "El mago de Oz", alt: ["The Wizard of Oz"], clues: ["🌈👠","Camino amarillo","Dorothy y Toto","No hay lugar como el ___","1939"]},
-      { title: "Apocalypse Now", alt: [], clues: ["🚁🌴","Vietnam locura","Coronel Kurtz","Horror, el ___","1979"]},
-      { title: "Salvar al soldado Ryan", alt: ["Saving Private Ryan"], clues: ["🏖️🔫","Desembarco Normandía","Buscar a Ryan","Tom Hanks","Gana la guerra por ___","1998"]},
-      { title: "El imperio contraataca", alt: ["The Empire Strikes Back"], clues: ["❄️⚔️","Hoth y Dagobah","Entrenamiento Yoda","Yo soy tu ___","1980"]},
-      { title: "Todo sobre mi madre", alt: [], clues: ["👩‍👧🎭","Transplante y teatro","Almodóvar","A una mujer no se le ___","1999"]},
-      { title: "Nomadland", alt: [], clues: ["🚐🏜️","Viuda nómada","Vida en furgoneta","Frances McDormand","Nos vemos por el ___","2020"]},
-      { title: "Vértigo", alt: ["Vertigo"], clues: ["🌀🏙️","Detective con miedo a alturas","Obsesión por mujer","San Francisco","De entre los muertos","1958"]},
-      { title: "El padrino: Parte II", alt: ["The Godfather Part II"], clues: ["👑🔙","Ascenso y caída","Vito y Michael","Secuela épica","Mantén amigos cerca pero enemigos más ___","1974"]},
-      { title: "Lawrence de Arabia", alt: ["Lawrence of Arabia"], clues: ["🏜️🐪","Desierto árabe","Oficial británico","Peter O'Toole","Nada es escrito","1962"]},
-      { title: "Cantando bajo la lluvia", alt: ["Singin' in the Rain"], clues: ["☔💃","Transición al sonoro","Bailes inolvidables","Gene Kelly","I'm singing in the ___","1952"]},
-      { title: "El puente sobre el río Kwai", alt: ["The Bridge on the River Kwai"], clues: ["🌉🎶","Prisioneros construyen puente","Silbido famoso","Alec Guinness","Madness!","1957"]},
-      { title: "Algunos hombres buenos", alt: ["A Few Good Men"], clues: ["⚖️🪖","Juicio militar","You can't handle the ___","Tom Cruise","1992"]},
-      { title: "Scarface", alt: ["El precio del poder","Caracortada"], clues: ["💊🔫","Tony Montana","Say hello to my little ___","Al Pacino","1983"]},
-      { title: "Taxi Driver", alt: [], clues: ["🚕🌃","Veterano solitario","You talkin' to ___?","De Niro","1976"]},
-      { title: "Raging Bull", alt: ["Toro salvaje"], clues: ["🥊⚫⚪","Boxeador LaMotta","De Niro engorda","Scorsese","¿Te crees mejor que yo?","1980"]},
-      { title: "Alien", alt: ["Alien, el octavo pasajero"], clues: ["👽🚀","En el espacio nadie oye tus ___","Ripley","1979"]},
-      { title: "Terminator 2", alt: ["Terminator 2: El juicio final"], clues: ["🤖🔫","I'll be ___","T-800 protector","1991"]},
-      { title: "Die Hard", alt: ["Jungla de cristal"], clues: ["🏢🎄","Yippee-ki-yay, ___","Nakatomis","1988"]},
-      { title: "Raiders of the Lost Ark", alt: ["En busca del arca perdida"], clues: ["🪞🏜️","Látigo y fedora","Indiana Jones","Snakes, why did it have to be ___","1981"]},
-      { title: "Inglourious Basterds", alt: [], clues: ["🔪🎥","Venganza judíos nazis","Bastardos","Quentin Tarantino","2009"]},
-      { title: "Django Unchained", alt: ["Django desencadenado"], clues: ["🤠🔗","Esclavo libre","La D es muda","2012"]},
-      { title: "The Wolf of Wall Street", alt: ["El lobo de Wall Street"], clues: ["💰📈","Jordan Belfort","I'm not leaving","2013"]},
-      { title: "Drive", alt: [], clues: ["🚗🦂","Conductor nocturno","Chaquetilla escorpión","2011"]},
-      { title: "No Country for Old Men", alt: ["No es país para viejos"], clues: ["💰🔫","Moneda al aire","Anton Chigurh","2007"]},
-      { title: "There Will Be Blood", alt: [], clues: ["🛢️🥛","Petróleo y leche","I drink your ___","2007"]},
-      { title: "Mulholland Drive", alt: [], clues: ["🌀🌃","Sueño hollywoodense","Club Silencio","David Lynch","2001"]},
-      { title: "Eternal Sunshine of the Spotless Mind", alt: ["¡Olvídate de mí!"], clues: ["🧠❤️","Borrar recuerdos","Meet me in Montauk","2004"]},
-      { title: "Her", alt: [], clues: ["📱💕","Amor con IA","Scarlett voz","2013"]},
-      { title: "Moonlight", alt: [], clues: ["🌕🏖️","Tres etapas vida","Chiron","2016"]},
-      { title: "Get Out", alt: ["¡Huye!"], clues: ["🫖😱","Sunken place","Hipnosis","Jordan Peele","2017"]},
-      { title: "Everything Everywhere All at Once", alt: [], clues: ["🥯🌭","Multiverso lavandería","Hot dog fingers","2022"]},
-      { title: "The Banshees of Inisherin", alt: [], clues: ["🇮🇪✂️","Amistad rota dedos","Inisherin","2022"]},
-      { title: "Tár", alt: ["TÁR","TAR"], clues: ["🎻👩‍🎤","Directora orquesta caída","Lydia Tár","Berlín - Filarmónica de Berlín","2022"]},
-      { title: "Poor Things", alt: [], clues: ["🧠👰","Mujer reanimada","Bella Baxter","2023"]}
-    ];
-	
-
-let gameMovies = [];
-  let totalToPlay = 100;
-  let currentLevel = 0;
-  let currentClue = 0;
-  let score = 0;
-  let correctAnswers = 0;
-  let totalCluesUsed = 0;
-  let gameMode = "classic";
-  let timeLeft = 20;
-  let timer = null;
-
-  function startGame() {
-    gameMode = document.getElementById("gameMode").value;
-
-    const select = document.getElementById('numMovies');
-    totalToPlay = parseInt(select.value);
-
-    gameMovies = [...allMovies].sort(() => Math.random() - 0.5).slice(0, totalToPlay);
-
-    // Ocultar botón de pista en modo hardcore
-    if (gameMode === "hardcore") {
-      document.getElementById("clueBtn").style.display = "none";
-    } else {
-      document.getElementById("clueBtn").style.display = "block";
-    }
-
-    document.getElementById('startScreen').style.display = 'none';
-    document.getElementById('gameScreen').style.display = 'block';
-    currentLevel = 0;
-    score = 0;
-    correctAnswers = 0;
-    totalCluesUsed = 0;
-    loadLevel();
-  }
-
-  function loadLevel() {
-    currentClue = 0;
-    updateDisplay();
-
-    // Temporizador solo en modo arcade
-    if (gameMode === "arcade") {
-      timeLeft = 20;
-      clearInterval(timer);
-      timer = setInterval(() => {
-        timeLeft--;
-        if (timeLeft <= 0) {
-          clearInterval(timer);
-          showMessage("⏱️ ¡Tiempo agotado!", "incorrect");
-          skipMovie();
-        }
-      }, 1000);
-    }
-
-    document.getElementById('clueText').textContent = gameMovies[currentLevel].clues[currentClue];
-    document.getElementById('answerInput').value = '';
-    document.getElementById('answerInput').focus();
-    document.getElementById('message').textContent = '';
-    document.getElementById('message').className = 'message';
-    document.getElementById('clueBtn').disabled = false;
-    updateClueDots();
-  }
-
-  function updateDisplay() {
-    document.getElementById('levelDisplay').textContent = `${currentLevel + 1}/${totalToPlay}`;
-    document.getElementById('scoreDisplay').textContent = score;
-    document.getElementById('correctDisplay').textContent = correctAnswers;
-    const progress = ((currentLevel / totalToPlay) * 100).toFixed(0);
-    document.getElementById('progressBar').style.width = progress + '%';
-    document.getElementById('progressBar').textContent = progress + '%';
-  }
-
-  function updateClueDots() {
-    for (let i = 1; i <= 6; i++) {
-      const dot = document.getElementById('dot' + i);
-      if (i <= currentClue + 1) {
-        dot.classList.add('used');
-      } else {
-        dot.classList.remove('used');
-      }
-    }
-  }
-
-  function nextClue() {
-    if (currentClue < 5) {  // Hay 6 pistas (índices 0 a 5)
-      currentClue++;
-      document.getElementById('clueText').textContent = gameMovies[currentLevel].clues[currentClue];
-      updateClueDots();
-      showMessage('💡 Nueva pista desbloqueada', 'hint');
-    } else {
-      document.getElementById('clueBtn').disabled = true;
-      showMessage('🚫 No hay más pistas disponibles', 'hint');
-    }
-  }
-
-  function normalizeText(text) {
-    return text
-      .toLowerCase()
-      .normalize("NFD")
-      .replace(/[\u0300-\u036f]/g, "")
-      .replace(/[^a-z0-9\s]/g, "")
-      .trim();
-  }
-
-  function checkAnswer() {
-    const userAnswer = document.getElementById('answerInput').value.trim();
-
-    if (!userAnswer) {
-      showMessage('❌ Por favor, escribe una respuesta', 'incorrect');
-      return;
-    }
-
-    const normalizedAnswer = normalizeText(userAnswer);
-    const normalizedCorrect = normalizeText(gameMovies[currentLevel].title);
-    const allValidTitles = [normalizedCorrect, ...gameMovies[currentLevel].alt.map(t => normalizeText(t))];
-    const isCorrect = allValidTitles.includes(normalizedAnswer);
-
-    if (isCorrect) {
-      const pointsEarned = 6 - currentClue;  // Máximo 6 puntos si acierta con la primera pista
-      score += pointsEarned;
-      correctAnswers++;
-      totalCluesUsed += currentClue + 1;
-
-      // Detener temporizador si está en modo arcade
-      if (gameMode === "arcade") {
-        clearInterval(timer);
-      }
-
-      showMessage(`✅ ¡Correcto! +${pointsEarned} puntos`, 'correct');
-
-      setTimeout(() => {
-        currentLevel++;
-        if (currentLevel < totalToPlay) {
-          loadLevel();
-        } else {
-          showFinalScreen();
-        }
-      }, 1500);
-
-    } else {
-      // Respuesta incorrecta
-      if (gameMode === "hardcore") {
-        showMessage('❌ Incorrecto... Fin del juego en modo Hardcore', 'incorrect');
-        setTimeout(() => {
-          restartGame();
-        }, 2000);
-      } else {
-        showMessage('❌ Incorrecto, ¡intenta de nuevo!', 'incorrect');
-      }
-    }
-  }
-
-  function skipMovie() {
-    totalCluesUsed += 6;  // Cuenta como si hubiera usado todas las pistas
-
-    if (gameMode === "arcade") {
-      clearInterval(timer);
-    }
-
-    currentLevel++;
-    if (currentLevel < totalToPlay) {
-      loadLevel();
-    } else {
-      showFinalScreen();
-    }
-  }
-
-  function skipMovieManual() {
-    if (confirm('¿Seguro que quieres saltar esta película? No ganarás puntos.')) {
-      skipMovie();
-    }
-  }
-
-  function showMessage(text, type) {
-    const msg = document.getElementById('message');
-    msg.textContent = text;
-    msg.className = 'message ' + type;
-  }
-
-  function showFinalScreen() {
-    document.getElementById('gameScreen').style.display = 'none';
-    document.getElementById('finalScreen').style.display = 'block';
-
-    document.getElementById('finalCorrect').textContent = correctAnswers;
-    document.getElementById('totalPlayed').textContent = totalToPlay;
-    document.getElementById('finalScore').textContent = score;
-    document.getElementById('maxPossible').textContent = totalToPlay * 6;
-
-    const avgClues = correctAnswers > 0 ? (totalCluesUsed / correctAnswers).toFixed(1) : '0';
-    document.getElementById('avgClues').textContent = avgClues;
-
-    const percentage = (correctAnswers / totalToPlay) * 100;
-    let performance = '';
-
-    if (percentage === 100 && score >= totalToPlay * 4) {
-      performance = '🌟 ¡MAESTRO DEL CINE ABSOLUTO! ¡Legendario!';
-    } else if (percentage >= 80) {
-      performance = '🎬 ¡Cinéfilo Profesional!';
-    } else if (percentage >= 60) {
-      performance = '🎥 ¡Gran aficionado!';
-    } else if (percentage >= 40) {
-      performance = '🍿 ¡Buen intento!';
-    } else {
-      performance = '📺 ¡A seguir viendo películas!';
-    }
-
-    document.getElementById('performance').textContent = performance;
-  }
-
-  function restartGame() {
-    currentLevel = 0;
-    currentClue = 0;
-    score = 0;
-    correctAnswers = 0;
-    totalCluesUsed = 0;
-
-    if (timer) clearInterval(timer);
-
-    document.getElementById('finalScreen').style.display = 'none';
-    document.getElementById('startScreen').style.display = 'block';
-  }
-  </script>
+  <script src="js.js"></script>
 </body>
 </html>
