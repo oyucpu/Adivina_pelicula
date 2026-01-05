@@ -6,37 +6,37 @@ const MOVIES = [
   { title: "Gladiator", alt: ["Gladiador"], genre: "accion", difficulty: "easy", clues: ["🏟️⚔️👑","General romano venganza","Me entretendréis","Máximo Décimo Meridio","Russell Crowe arena","2000"]},
   { title: "John Wick", alt: [], genre: "accion", difficulty: "easy", clues: ["🔫🐕💀","Asesino retirado venganza","Mataron su perro","Keanu Reeves","Continental Hotel","2014"]},
   { title: "Duro de Matar", alt: ["Die Hard","Jungla de cristal"], genre: "accion", difficulty: "medium", clues: ["🏢💣👮","Policía vs terroristas","Yippee ki-yay","Bruce Willis descalzo","Nakatomi Plaza","1988"]},
-  { title: "Mad Max Fury Road", alt: ["Mad Max"], genre: "accion", difficulty: "medium", clues: ["🏜️🚗🔥","Persecución postapocalíptica","Lovely day","Furiosa","Charlize Theron","2015"]},
+  { title: "Mad Max Fury Road", alt: ["Mad Max", "Mad Max: Furia en el camino"], genre: "accion", difficulty: "medium", clues: ["🏜️🚗🔥","Persecución postapocalíptica","Lovely day","Furiosa","Charlize Theron","2015"]},
   { title: "Kill Bill", alt: [], genre: "accion", difficulty: "medium", clues: ["⚔️👰💛","Novia busca venganza","Katana samurai","Uma Thurman","Tarantino sangre","2003"]},
   { title: "Misión Imposible", alt: ["Mission Impossible"], genre: "accion", difficulty: "easy", clues: ["🕵️💻🎭","Agente secreto misiones","Tom Cruise corre","IMF equipo","Tema musical icónico","1996"]},
   { title: "Casino Royale", alt: [], genre: "accion", difficulty: "medium", clues: ["🎰🔫🍸","James Bond reinicio","Daniel Craig rubio","Poker alto riesgo","Vesper Lynd","2006"]},
   { title: "300", alt: ["trescientos"], genre: "accion", difficulty: "easy", clues: ["⚔️🛡️🏛️","Espartanos vs persas","This is Sparta","Leónidas 300 guerreros","Termópilas batalla","2006"]},
-  { title: "The Raid", alt: [], genre: "accion", difficulty: "hard", clues: ["🥋🏢💥","Artes marciales edificio","Indonesia brutal","Iko Uwais","Silat combate","2011"]},
-  { title: "Máxima Velocidad", alt: ["Speed"], genre: "accion", difficulty: "medium", clues: ["🚌💣⏱️","Autobús bomba velocidad","Keanu Reeves joven","Sandra Bullock conduce","Menos 50 mph explota","1994"]},
-  { title: "Rápidos y Furiosos", alt: ["Fast Furious","Fast and Furious"], genre: "accion", difficulty: "easy", clues: ["🚗💨👨‍👩‍👧‍👦","Carreras ilegales familia","Vin Diesel calvo","Paul Walker","Cuarto de milla","2001"]},
+  { title: "The Raid", alt: ["La redada", "Redada asesina"], genre: "accion", difficulty: "hard", clues: ["🥋🏢💥","Artes marciales edificio","Indonesia brutal","Iko Uwais","Silat combate","2011"]},
+  { title: "Máxima Velocidad", alt: ["Speed","Speed: Máxima potencia"], genre: "accion", difficulty: "medium", clues: ["🚌💣⏱️","Autobús bomba velocidad","Keanu Reeves joven","Sandra Bullock conduce","Menos 50 mph explota","1994"]},
+  { title: "Rápidos y Furiosos", alt: ["Fast Furious","Fast and Furious","Fast & Furious Aún más rápido"], genre: "accion", difficulty: "easy", clues: ["🚗💨👨‍👩‍👧‍👦","Carreras ilegales familia","Vin Diesel calvo","Paul Walker","Cuarto de milla","2001"]},
   { title: "Depredador", alt: ["Predator"], genre: "accion", difficulty: "medium", clues: ["👽🌴💪","Cazador alienígena selva","Get to chopper","Arnold Schwarzenegger","Camuflaje invisible","1987"]},
-  { title: "Terminator 2", alt: ["Terminator 2: El juicio final"], genre: "accion", difficulty: "easy", clues: ["🤖🔫⏰","Robot del futuro","I'll be back","Arnold protege niño","Hasta la vista baby","1991"]},
-  { title: "Top Gun", alt: [], genre: "accion", difficulty: "easy", clues: ["✈️😎🏍️","Pilotos caza élite","Maverick apodo","Tom Cruise joven","Voleibol playa","1986"]},
-  { title: "Batman El Caballero Oscuro", alt: ["The Dark Knight"], genre: "superheroes", difficulty: "easy", clues: ["🦇🃏🌃","Héroe Gotham contra caos","Why so serious","Heath Ledger Joker","Batman Bale","2008"]},
-  { title: "Inception", alt: ["El Origen"], genre: "ciencia-ficcion", difficulty: "medium", clues: ["🧠⏳🌆","Sueños dentro sueños","Tótem trompo","Leonardo DiCaprio","Arquitectura mental","2010"]},
+  { title: "Terminator 2", alt: ["Terminator 2: El juicio final","Terminator 2: Judgment Day"], genre: "accion", difficulty: "easy", clues: ["🤖🔫⏰","Robot del futuro","I'll be back","Arnold protege niño","Hasta la vista baby","1991"]},
+  { title: "Top Gun", alt: ["Top Gun: Pasión y gloria","Top Gun: Ídolos del aire","Top Gun: Reto a la gloria"], genre: "accion", difficulty: "easy", clues: ["✈️😎🏍️","Pilotos caza élite","Maverick apodo","Tom Cruise joven","Voleibol playa","1986"]},
+  { title: "Batman El Caballero Oscuro", alt: ["The Dark Knight","Batman El caballero de la noche"], genre: "superheroes", difficulty: "easy", clues: ["🦇🃏🌃","Héroe Gotham contra caos","Why so serious","Heath Ledger Joker","Batman Bale","2008"]},
+  { title: "Inception", alt: ["El Origen","Origen"], genre: "ciencia-ficcion", difficulty: "medium", clues: ["🧠⏳🌆","Sueños dentro sueños","Tótem trompo","Leonardo DiCaprio","Arquitectura mental","2010"]},
   { title: "Los Vengadores", alt: ["The Avengers"], genre: "superheroes", difficulty: "easy", clues: ["🦸‍♂️🛡️⚡","Héroes se unen","Yo soy Iron Man","Loki villano","Nueva York batalla","2012"]},
   { title: "Logan", alt: [], genre: "superheroes", difficulty: "medium", clues: ["🧔‍♂️🗡️👧","Mutante envejecido","Garras adamantium","Niña clon","Western moderno","2017"]},
 
   // ANIMACIÓN
   { title: "El Rey León", alt: ["The Lion King"], genre: "animacion", difficulty: "easy", clues: ["🦁👑🌅","Animales sabana africana","León huye tragedia","Hakuna Matata","Ciclo vida","Disney 1994"]},
   { title: "Toy Story", alt: [], genre: "animacion", difficulty: "easy", clues: ["🤠🚀🧸","Juguetes cobran vida","Infinito más allá","Woody Buzz","Andy dueño","Pixar 1995"]},
-  { title: "Frozen", alt: ["Congelado"], genre: "animacion", difficulty: "easy", clues: ["❄️👭🏰","Hermanas poderes hielo","Let it go","Elsa Anna","Olaf muñeco nieve","Disney 2013"]},
+  { title: "Frozen", alt: ["Congelado", "Frozen El reino del hielo", "Frozen: Una aventura congelada"], genre: "animacion", difficulty: "easy", clues: ["❄️👭🏰","Hermanas poderes hielo","Let it go","Elsa Anna","Olaf muñeco nieve","Disney 2013"]},
   { title: "Coco", alt: [], genre: "animacion", difficulty: "easy", clues: ["💀🎸👨‍👩‍👧","Día muertos música","Remember me","Tierra muertos","Miguel guitarra","Pixar 2017"]},
   { title: "Buscando a Nemo", alt: ["Finding Nemo"], genre: "animacion", difficulty: "easy", clues: ["🐠🤿🌊","Pez payaso busca hijo","Keep swimming","Dory memoria corta","Aleta afortunada","Pixar 2003"]},
   { title: "Shrek", alt: [], genre: "animacion", difficulty: "easy", clues: ["🧅👹🏰","Ogro verde pantano","Cebollas capas","Burro hablador","Fiona princesa","DreamWorks 2001"]},
-  { title: "Up", alt: [], genre: "animacion", difficulty: "easy", clues: ["🏠🎈🧓","Viejo casa voladora","Aventura Sudamérica","Perro Squirrel","Carl Russell","Pixar 2009"]},
+  { title: "Up", alt: ["Up una aventura de altura"], genre: "animacion", difficulty: "easy", clues: ["🏠🎈🧓","Viejo casa voladora","Aventura Sudamérica","Perro Squirrel","Carl Russell","Pixar 2009"]},
   { title: "El Viaje de Chihiro", alt: ["Spirited Away"], genre: "animacion", difficulty: "medium", clues: ["👻🏮🐷","Niña mundo espíritus","Casa baños","Studio Ghibli","Haku dragón","Miyazaki 2001"]},
-  { title: "Inside Out", alt: ["Intensa-Mente","Del Revés"], genre: "animacion", difficulty: "easy", clues: ["🧠😃😭","Emociones dentro cabeza","Alegría Tristeza Ira","Riley niña","Islas personalidad","Pixar 2015"]},
+  { title: "Inside Out", alt: ["Intensa-Mente","Intensamente","Del Revés"], genre: "animacion", difficulty: "easy", clues: ["🧠😃😭","Emociones dentro cabeza","Alegría Tristeza Ira","Riley niña","Islas personalidad","Pixar 2015"]},
   { title: "Spider-Man: Un Nuevo Universo", alt: ["Spider-Verse","Into the Spider-Verse"], genre: "animacion", difficulty: "medium", clues: ["🕷️🎨🌌","Miles Morales animación","Múltiples Spider-Man","Cualquiera máscara","Animación innovadora","2018"]},
   { title: "Ratatouille", alt: [], genre: "animacion", difficulty: "medium", clues: ["🐀👨‍🍳🍽️","Rata cocina París","Remy gorro","Cualquiera cocinar","Gusteau restaurante","Pixar 2007"]},
   { title: "Wall-E", alt: [], genre: "animacion", difficulty: "medium", clues: ["🤖🌍💚","Robot limpia Tierra","Evaaa","Compacta basura","Axiom nave","Pixar 2008"]},
   { title: "Kung Fu Panda", alt: [], genre: "animacion", difficulty: "easy", clues: ["🐼🥋🍜","Panda gordo kung fu","Guerrero Dragón","Po Cinco Furiosos","Skadoosh","DreamWorks 2008"]},
-  { title: "Moana", alt: ["Vaiana"], genre: "animacion", difficulty: "easy", clues: ["🌊🏝️⛵","Princesa polinesia navega","Te Fiti corazón","Maui semidiós","How far go","Disney 2016"]},
+  { title: "Moana", alt: ["Vaiana","Moana: Un mar de aventuras"], genre: "animacion", difficulty: "easy", clues: ["🌊🏝️⛵","Princesa polinesia navega","Te Fiti corazón","Maui semidiós","How far go","Disney 2016"]},
   { title: "Los Increíbles", alt: ["The Incredibles"], genre: "animacion", difficulty: "easy", clues: ["🦸‍♂️👨‍👩‍👧‍👦💪","Familia superhéroes","No capes","Síndrome villano","Mr Increíble","Pixar 2004"]},
   { title: "Monsters Inc", alt: ["Monstruos S.A."], genre: "animacion", difficulty: "easy", clues: ["👹🚪😱","Monstruos asustan niños","Sully Mike","Boo niña","Puertas energía","Pixar 2001"]},
   { title: "Cómo Entrenar a tu Dragón", alt: ["How to Train Your Dragon"], genre: "animacion", difficulty: "medium", clues: ["🐉🏝️⚔️","Vikingo amista dragón","Hipo Desdentao","Vuela dragones","Isla Berk","DreamWorks 2010"]},
@@ -46,56 +46,56 @@ const MOVIES = [
 
   // DRAMA
   { title: "Forrest Gump", alt: [], genre: "drama", difficulty: "easy", clues: ["🏃‍♂️🍫🇺🇸","Vida extraordinaria","Caja chocolates","Jenny amor","Tom Hanks","1994"]},
-  { title: "El Club de la Lucha", alt: ["Fight Club"], genre: "drama", difficulty: "medium", clues: ["🥊🧼🔥","No hables club","Doble identidad","Brad Pitt","Final sorpresa","1999"]},
+  { title: "El Club de la Lucha", alt: ["Fight Club", "El club de la pelea"], genre: "drama", difficulty: "medium", clues: ["🥊🧼🔥","No hables club","Doble identidad","Brad Pitt","Final sorpresa","1999"]},
   { title: "La Lista de Schindler", alt: ["Schindler's List"], genre: "drama", difficulty: "easy", clues: ["📜🕊️🕯️","Holocausto","Abrigo rojo","Salvar judíos","Spielberg","1993"]},
-  { title: "Cadena Perpetua", alt: ["The Shawshank Redemption"], genre: "drama", difficulty: "easy", clues: ["🔒🔨🌧️","Prisión injusta","Esperanza","Andy Dufresne","Red narrador","1994"]},
+  { title: "Cadena Perpetua", alt: ["The Shawshank Redemption","Sueños de libertad","scape a la libertad"], genre: "drama", difficulty: "easy", clues: ["🔒🔨🌧️","Prisión injusta","Esperanza","Andy Dufresne","Red narrador","1994"]},
   { title: "Parásitos", alt: ["Parasite"], genre: "drama", difficulty: "medium", clues: ["🏠⬆️⬇️🍑","Clases sociales","Familia infiltrada","Casa moderna","Corea del Sur","2019"]},
 
   // TERROR
   { title: "El Exorcista", alt: ["The Exorcist"], genre: "terror", difficulty: "easy", clues: ["👹✝️😱","Posesión demoníaca","Niña poseída","Sacerdotes","Clásico terror","1973"]},
   { title: "El Resplandor", alt: ["The Shining"], genre: "terror", difficulty: "medium", clues: ["🏨🪓❄️","Hotel aislado","Here’s Johnny","Gemelas pasillo","Kubrick","1980"]},
   { title: "It", alt: ["Eso"], genre: "terror", difficulty: "easy", clues: ["🎈🤡🚲","Payaso asesino","Derry pueblo","Niños protagonistas","Stephen King","2017"]},
-  { title: "Hereditary", alt: [], genre: "terror", difficulty: "hard", clues: ["🏠🕯️👁️","Trauma familiar","Culto oculto","Cabeza impactante","Terror psicológico","2018"]},
+  { title: "Hereditary", alt: ["El legado del diablo"], genre: "terror", difficulty: "hard", clues: ["🏠🕯️👁️","Trauma familiar","Culto oculto","Cabeza impactante","Terror psicológico","2018"]},
 
   // Más películas originales
-  { title: "Pulp Fiction", alt: [], genre: "drama", difficulty: "medium", clues: ["💊🔫🍔","Historias entrelazadas","Baile Twist","Tarantino diálogos","Samuel L Jackson","1994"]},
+  { title: "Pulp Fiction", alt: ["Tiempos violentos"], genre: "drama", difficulty: "medium", clues: ["💊🔫🍔","Historias entrelazadas","Baile Twist","Tarantino diálogos","Samuel L Jackson","1994"]},
   { title: "Interestelar", alt: ["Interstellar"], genre: "ciencia-ficcion", difficulty: "medium", clues: ["🌌🕳️🚀","Viaje agujero negro","Amor trascende tiempo","Cooper biblioteca","Hans Zimmer música","2014"]},
   { title: "El Padrino", alt: ["The Godfather"], genre: "drama", difficulty: "easy", clues: ["👔💼🐴","Familia mafia","Oferta que no puedes rechazar","Marlon Brando","Vito Corleone","1972"]},
   { title: "Avengers: Endgame", alt: ["Vengadores Endgame"], genre: "superheroes", difficulty: "easy", clues: ["⏳🦸‍♂️💥","Después chasquido","Portal tiempo","I am Iron Man","Final épico","2019"]},
 
   // === PELÍCULAS NUEVAS AÑADIDAS (más de 80) ===
-  { title: "Regreso al Futuro", alt: ["Back to the Future"], genre: "ciencia-ficcion", difficulty: "easy", clues: ["🚗⏰🔥","Delorean 88 mph","Doc Brown","Marty McFly","1.21 gigawatts","1985"]},
+  { title: "Regreso al Futuro", alt: ["Back to the Future","Volver al futuro","Vuelta al futuro"], genre: "ciencia-ficcion", difficulty: "easy", clues: ["🚗⏰🔥","Delorean 88 mph","Doc Brown","Marty McFly","1.21 gigawatts","1985"]},
   { title: "E.T. el Extraterrestre", alt: ["E.T."], genre: "ciencia-ficcion", difficulty: "easy", clues: ["👽🚲🌕","Amigo alienígena","Telefono casa","Dedos brillan","Elliot bicicleta vuela","1982"]},
   { title: "Tiburón", alt: ["Jaws"], genre: "terror", difficulty: "easy", clues: ["🦈🏖️🎶","Tiburón ataca playa","Dun dun","Necesitas barco más grande","Spielberg verano","1975"]},
-  { title: "Salvar al Soldado Ryan", alt: ["Saving Private Ryan"], genre: "drama", difficulty: "medium", clues: ["🏖️🔫🇺🇸","Desembarco Normandía","Tom Hanks capitán","Buscar Ryan","Spielberg guerra","1998"]},
-  { title: "El Piano", alt: ["The Piano"], genre: "drama", difficulty: "hard", clues: ["🎹🏞️🔇","Mujer muda Nueva Zelanda","Holly Hunter","Playa piano","Harvey Keitel","1993"]},
-  { title: "Brokeback Mountain", alt: [], genre: "drama", difficulty: "medium", clues: ["🏔️🐑❤️","Vaqueros amor prohibido","I wish I knew how to quit you","Heath Ledger Jake Gyllenhaal","2005"]},
-  { title: "Moonlight", alt: [], genre: "drama", difficulty: "medium", clues: ["🌕🏖️🖤","Identidad negra gay","Tres etapas vida","Chiron","Miami playa","2016"]},
+  { title: "Salvar al Soldado Ryan", alt: ["Saving Private Ryan","Rescatando al soldado Ryan"], genre: "drama", difficulty: "medium", clues: ["🏖️🔫🇺🇸","Desembarco Normandía","Tom Hanks capitán","Buscar Ryan","Spielberg guerra","1998"]},
+  { title: "El Piano", alt: ["The Piano","La lección de piano"], genre: "drama", difficulty: "hard", clues: ["🎹🏞️🔇","Mujer muda Nueva Zelanda","Holly Hunter","Playa piano","Harvey Keitel","1993"]},
+  { title: "Brokeback Mountain", alt: ["En terreno vedado","Secreto en la montaña"], genre: "drama", difficulty: "medium", clues: ["🏔️🐑❤️","Vaqueros amor prohibido","I wish I knew how to quit you","Heath Ledger Jake Gyllenhaal","2005"]},
+  { title: "Moonlight", alt: ["Moonlight: Historia de una Vida","Luz de luna"], genre: "drama", difficulty: "medium", clues: ["🌕🏖️🖤","Identidad negra gay","Tres etapas vida","Chiron","Miami playa","2016"]},
   { title: "Nomadland", alt: [], genre: "drama", difficulty: "hard", clues: ["🚐🏜️😔","Viuda nómada","Frances McDormand","Vida van","Chloé Zhao","2020"]},
   { title: "Drive", alt: [], genre: "accion", difficulty: "medium", clues: ["🚗🦂😶","Conductor getaway","Chaquetón escorpión","Ryan Gosling","Ascensor beso","2011"]},
-  { title: "Oldboy", alt: [], genre: "accion", difficulty: "hard", clues: ["🔨🦑😱","Venganza coreana","Martillo pasillo","Final twist","Park Chan-wook","2003"]},
+  { title: "Oldboy", alt: ["Oldboy: Cinco días para vengarse"], genre: "accion", difficulty: "hard", clues: ["🔨🦑😱","Venganza coreana","Martillo pasillo","Final twist","Park Chan-wook","2003"]},
   { title: "Blade Runner", alt: ["Blade Runner 2049"], genre: "ciencia-ficcion", difficulty: "medium", clues: ["🌧️🤖👁️","Replicantes lluvia","Tears in rain","Harrison Ford","¿Humanos o máquinas?","1982"]},
-  { title: "2001: Una Odisea del Espacio", alt: [], genre: "ciencia-ficcion", difficulty: "hard", clues: ["🪐🤖🎶","Monolito HAL","Kubrick","Thus Spake Zarathustra","Evolución","1968"]},
-  { title: "Inglourious Basterds", alt: [], genre: "drama", difficulty: "medium", clues: ["🎥🔥🏞️","Judíos cazan nazis","Tarantino","Cinema quemado","Brad Pitt","2009"]},
-  { title: "Django Desencadenado", alt: ["Django Unchained"], genre: "drama", difficulty: "medium", clues: ["🤠🔫🌵","Esclavo venganza","Dentista cazarrecompensas","Jamie Foxx","Tarantino","2012"]},
-  { title: "Once Upon a Time in Hollywood", alt: [], genre: "drama", difficulty: "medium", clues: ["🌴🎬😎","Los Ángeles 1969","Manson familia","DiCaprio Pitt","Tarantino final alternativo","2019"]},
+  { title: "2001: Una Odisea del Espacio", alt: ["2001: A Space Odyssey","2001: Odisea del espacio"], genre: "ciencia-ficcion", difficulty: "hard", clues: ["🪐🤖🎶","Monolito HAL","Kubrick","Thus Spake Zarathustra","Evolución","1968"]},
+  { title: "Inglourious Basterds", alt: ["Bastardos sin gloria","Malditos bastardos"], genre: "drama", difficulty: "medium", clues: ["🎥🔥🏞️","Judíos cazan nazis","Tarantino","Cinema quemado","Brad Pitt","2009"]},
+  { title: "Django Desencadenado", alt: ["Django Unchained","Django sin cadenas"], genre: "drama", difficulty: "medium", clues: ["🤠🔫🌵","Esclavo venganza","Dentista cazarrecompensas","Jamie Foxx","Tarantino","2012"]},
+  { title: "Once Upon a Time in Hollywood", alt: ["Érase una vez en Hollywood"Había una vez en Hollywood,], genre: "drama", difficulty: "medium", clues: ["🌴🎬😎","Los Ángeles 1969","Manson familia","DiCaprio Pitt","Tarantino final alternativo","2019"]},
   { title: "Mi Vecino Totoro", alt: ["My Neighbor Totoro"], genre: "animacion", difficulty: "easy", clues: ["🌳🚌😺","Criaturas bosque","Ghibli","Catbus","Lluvia semillas","1988"]},
   { title: "Princesa Mononoke", alt: [], genre: "animacion", difficulty: "medium", clues: ["🐺🏹🌲","Hombre vs naturaleza","San loba","Ghibli espíritus","1997"]},
   { title: "La Tumba de las Luciérnagas", alt: ["Grave of the Fireflies"], genre: "animacion", difficulty: "hard", clues: ["🔥🍬😢","Hermanos guerra Japón","Ghibli triste","Luciérnagas","1988"]},
   { title: "Zootopia", alt: ["Zootrópolis"], genre: "animacion", difficulty: "easy", clues: ["🐰🦊🏙️","Coneja policía","Try everything","Judy Hopps Nick Wilde","Disney","2016"]},
-  { title: "Big Hero 6", alt: [], genre: "animacion", difficulty: "easy", clues: ["🤖🎈🏙️","Baymax robot","Hiro genio","Superhéroes San Fransokyo","Disney","2014"]},
+  { title: "Big Hero 6", alt: ["Grandes Heroes"], genre: "animacion", difficulty: "easy", clues: ["🤖🎈🏙️","Baymax robot","Hiro genio","Superhéroes San Fransokyo","Disney","2014"]},
   { title: "Encanto", alt: [], genre: "animacion", difficulty: "easy", clues: ["🏠🕯️🇨🇴","Familia mágica Colombia","No hablamos de Bruno","Mirabel","Disney 2021"]},
-  { title: "Spider-Man: No Way Home", alt: [], genre: "superheroes", difficulty: "easy", clues: ["🕷️🌉👥","Multiverso Spider-Man","Tres Peter","Tom Holland","Villanos clásicos","2021"]},
-  { title: "Black Panther", alt: [], genre: "superheroes", difficulty: "easy", clues: ["🐆🇼🇰💪","Wakanda forever","Vibranium","T'Challa","Marvel rey","2018"]},
+  { title: "Spider-Man: No Way Home", alt: ["Spider-Man: Sin camino a casa"], genre: "superheroes", difficulty: "easy", clues: ["🕷️🌉👥","Multiverso Spider-Man","Tres Peter","Tom Holland","Villanos clásicos","2021"]},
+  { title: "Black Panther", alt: ["Pantera negra"], genre: "superheroes", difficulty: "easy", clues: ["🐆🇼🇰💪","Wakanda forever","Vibranium","T'Challa","Marvel rey","2018"]},
   { title: "Guardianes de la Galaxia", alt: ["Guardians of the Galaxy"], genre: "superheroes", difficulty: "easy", clues: ["🎧🌌🦝","Banda sonora 80s","Star-Lord","Árbol baila","Rocket Groot","2014"]},
   { title: "Jurassic Park", alt: ["Parque Jurásico"], genre: "ciencia-ficcion", difficulty: "easy", clues: ["🦖🌴🚙","Dinosaurios revividos","La vida encuentra camino","Isla Nublar","T-Rex jeep","Spielberg 1993"]},
-  { title: "Star Wars: El Imperio Contraataca", alt: ["The Empire Strikes Back"], genre: "ciencia-ficcion", difficulty: "easy", clues: ["❄️⚔️👨‍👦","Yo soy tu padre","Hoth batalla","Luke Skywalker","Yoda entrenamiento","1980"]},
+  { title: "Star Wars: El Imperio Contraataca", alt: ["The Empire Strikes Back","La guerra de las galaxias: El Imperio contraataca"], genre: "ciencia-ficcion", difficulty: "easy", clues: ["❄️⚔️👨‍👦","Yo soy tu padre","Hoth batalla","Luke Skywalker","Yoda entrenamiento","1980"]},
   { title: "Indiana Jones: En Busca del Arca Perdida", alt: ["Raiders of the Lost Ark"], genre: "accion", difficulty: "easy", clues: ["🎩🪱🏜️","Arqueólogo aventura","Látigo","Harrison Ford","Nazis arca","1981"]},
   { title: "El Señor de los Anillos: La Comunidad del Anillo", alt: ["The Fellowship of the Ring"], genre: "fantasia", difficulty: "medium", clues: ["💍🏔️👥","Anillo único","Frodo portador","Gandalf balrog","Tolkien adaptación","2001"]},
-  { title: "Harry Potter y la Piedra Filosofal", alt: [], genre: "fantasia", difficulty: "easy", clues: ["🧙‍♂️⚡🏰","Niño mago cicatriz","Hogwarts escuela","Quidditch","Daniel Radcliffe","2001"]},
+  { title: "Harry Potter y la Piedra Filosofal", alt: ["Harry Potter and the Sorcerer's Stone"], genre: "fantasia", difficulty: "easy", clues: ["🧙‍♂️⚡🏰","Niño mago cicatriz","Hogwarts escuela","Quidditch","Daniel Radcliffe","2001"]},
   { title: "Piratas del Caribe: La Maldición de la Perla Negra", alt: [], genre: "accion", difficulty: "easy", clues: ["🏴‍☠️🚢🦜","Capitán Jack Sparrow","Rum gone","Johnny Depp","Barco fantasma","2003"]},
   { title: "El Laberinto del Fauno", alt: ["Pan's Labyrinth"], genre: "fantasia", difficulty: "medium", clues: ["🧚‍♀️🔴🌳","España posguerra","Niña fauno","Del Toro","Criatura ojos manos","2006"]},
-  { title: "Dune", alt: [], genre: "ciencia-ficcion", difficulty: "medium", clues: ["🏜️🪱⚔️","Planeta desierto especias","Paul Atreides","Gusanos arena","Timothée Chalamet","2021"]},
+  { title: "Dune", alt: ["Duna"], genre: "ciencia-ficcion", difficulty: "medium", clues: ["🏜️🪱⚔️","Planeta desierto especias","Paul Atreides","Gusanos arena","Timothée Chalamet","2021"]},
   { title: "Oppenheimer", alt: [], genre: "drama", difficulty: "medium", clues: ["💣🔥🧠","Padre bomba atómica","Trinity prueba","Cillian Murphy","Nolan biopic","2023"]},
   { title: "Todo en Todas Partes al Mismo Tiempo", alt: ["Everything Everywhere All at Once"], genre: "ciencia-ficcion", difficulty: "hard", clues: ["🥯🧦🌭","Multiverso lavandería","Rocks universo","Michelle Yeoh","Dedos salchicha","2022"]},
   { title: "Whiplash", alt: [], genre: "drama", difficulty: "medium", clues: ["🥁🎺💥","Baterista profesor duro","Not quite my tempo","Miles Teller","J.K. Simmons","2014"]},
@@ -199,6 +199,46 @@ const MOVIES = [
 { title: "Ready Player One", alt: [], genre: "ciencia-ficcion", difficulty: "easy", clues: ["🎮🕶️🏁","Realidad virtual","Referencias 80s","Easter eggs","Spielberg","2018"]},
 { title: "Tron: Legacy", alt: [], genre: "ciencia-ficcion", difficulty: "medium", clues: ["💡🏍️🌐","Mundo digital","Motos luz","Daft Punk","Rejilla","2010"]},
 
+// === NUEVAS PELÍCULAS AÑADIDAS (20 más para variedad) ===
+  // ACCIÓN
+  { title: "The Bourne Identity", alt: ["El Caso Bourne"], genre: "accion", difficulty: "medium", clues: ["🕵️‍♂️🔫🧠","Amnesia espía","Matt Damon","Persecución autos","Identidad secreta","2002"]},
+  { title: "Taken", alt: ["Búsqueda Implacable"], genre: "accion", difficulty: "easy", clues: ["📞🔫👧","Padre rescata hija","Habilidades particulares","Liam Neeson","Secuestro París","2008"]},
+
+  // ANIMACIÓN
+  { title: "Zootopia", alt: ["Zootrópolis"], genre: "animacion", difficulty: "easy", clues: ["🐰🦊🏙️","Animales ciudad","Judy Hopps policía","Nick Wilde estafador","Disney diversidad","2016"]},
+  { title: "Encanto", alt: [], genre: "animacion", difficulty: "easy", clues: ["🕯️👨‍👩‍👧‍👦🎶","Familia mágica Colombia","No hablamos Bruno","Mirabel sin don","Disney Lin-Manuel","2021"]},
+
+  // DRAMA
+  { title: "The Green Mile", alt: ["Milagros Inesperados"], genre: "drama", difficulty: "medium", clues: ["🔒⚡🙏","Prisión 1930s","Tom Hanks guardia","John Coffey milagros","Stephen King","1999"]},
+  { title: "12 Years a Slave", alt: ["12 Años de Esclavitud"], genre: "drama", difficulty: "hard", clues: ["⛓️📖🇺🇸","Hombre libre esclavizado","Chiwetel Ejiofor","Plantaciones sur","Historia real","2013"]},
+
+  // TERROR
+  { title: "The Conjuring", alt: ["El Conjuro"], genre: "terror", difficulty: "medium", clues: ["👻🏠🕯️","Casa embrujada","Ed y Lorraine Warren","Familia Perron","Basado hechos reales","2013"]},
+  { title: "A Quiet Place", alt: ["Un Lugar en Silencio"], genre: "terror", difficulty: "easy", clues: ["🤫👽🌽","Monstruos sonido","Familia Abbott","John Krasinski director","Silencio supervivencia","2018"]},
+
+  // CIENCIA-FICCIÓN
+  { title: "Dune", alt: ["Duna"], genre: "ciencia-ficcion", difficulty: "medium", clues: ["🏜️🪐🪱","Planeta desierto especia","Paul Atreides","Timothée Chalamet","Frank Herbert","2021"]},
+  { title: "Arrival", alt: ["La Llegada"], genre: "ciencia-ficcion", difficulty: "hard", clues: ["👽🕰️🖋️","Alienígenas lenguaje","Amy Adams lingüista","Tiempo no lineal","Heptápodos","2016"]},
+
+  // SUPERHEROES
+  { title: "Spider-Man: No Way Home", alt: ["Spider-Man Sin Camino a Casa"], genre: "superheroes", difficulty: "easy", clues: ["🕷️🌌🦹‍♂️","Multiverso villanos","Tom Holland","Tres Spider-Man","Doctor Strange","2021"]},
+  { title: "Black Panther", alt: ["Pantera Negra"], genre: "superheroes", difficulty: "easy", clues: ["🐆👑🇼🇰","Rey Wakanda","Vibranium","Chadwick Boseman","Wakanda forever","2018"]},
+
+  // COMEDIA (añadiendo nuevo género si no existe)
+  { title: "The Hangover", alt: ["Qué Pasó Ayer"], genre: "comedia", difficulty: "easy", clues: ["🎰🍻🐅","Despedida soltero Las Vegas","Resaca épica","Bradley Cooper","Tigre baño","2009"]},
+  { title: "Superbad", alt: ["Supercool"], genre: "comedia", difficulty: "medium", clues: ["🍻🚔👮","Adolescentes fiesta","McLovin ID falsa","Jonah Hill","Policías locos","2007"]},
+
+  // ROMANCE
+  { title: "La La Land", alt: [], genre: "romance", difficulty: "easy", clues: ["🎹🎤🌆","Musical Los Ángeles","Ryan Gosling piano","Emma Stone actriz","Baile estrellas","2016"]},
+  { title: "Before Sunrise", alt: ["Antes del Amanecer"], genre: "romance", difficulty: "hard", clues: ["🚂❤️🕰️","Encuentro tren Viena","Ethan Hawke","Julie Delpy","Diálogos profundos","1995"]},
+
+  // FANTASÍA
+  { title: "The Lord of the Rings: The Fellowship of the Ring", alt: ["El Señor de los Anillos: La Comunidad del Anillo"], genre: "fantasia", difficulty: "easy", clues: ["🧙‍♂️💍🌋","Anillo poder","Frodo viaje","Gandalf gris","Tierra Media","2001"]},
+  { title: "Pan's Labyrinth", alt: ["El Laberinto del Fauno"], genre: "fantasia", difficulty: "medium", clues: ["🧚‍♀️🕰️😱","España posguerra","Ofelia tareas","Guillermo del Toro","Fauno pálido","2006"]},
+
+  // CLÁSICOS
+  { title: "Casablanca", alt: [], genre: "clasicos", difficulty: "medium", clues: ["✈️❤️🎹","Amor Marruecos WWII","Here's looking at you kid","Humphrey Bogart","Rick's Café","1942"]},
+  { title: "Citizen Kane", alt: ["Ciudadano Kane"], genre: "clasicos", difficulty: "hard", clues: ["📰🛷🎥","Magnate prensa","Rosebud","Orson Welles","Innovación cinematográfica","1941"]}  
   
   // Puedes seguir añadiendo más si quieres, ¡hay espacio de sobra!
 ];
