@@ -18,7 +18,8 @@
           <li><strong>Pistas:</strong> 6 pistas por película (de difícil a fácil)</li>
           <li><strong>Puntos:</strong> Máximo 6 por película (menos pistas = más puntos)</li>
           <li><strong>Géneros:</strong> Elige entre 150+ películas de diferentes géneros</li>
-          <li><strong>Logros:</strong> Desbloquea logros especiales</li>
+          <li><strong>Logros:</strong> Desbloquea logros especiales al final</li>
+		  <li><strong>Nota:</strong> Algún Modo de Juego está en versión Beta y no funciona del todo bien, el Modo Clásico NO da problemas, gracias</li>
         </ul>
       </div>
 
@@ -31,6 +32,7 @@
             <option value="20">20 películas</option>
             <option value="30">30 películas</option>
             <option value="50">50 películas</option>
+            <option value="60">60 películas</option>
           </select>
         </div>
 
@@ -41,7 +43,7 @@
             <option value="hardcore">🔴 Hardcore (1 error = fin)</option>
             <option value="arcade">🔵 Arcade (20s por película)</option>
             <option value="survival">💀 Supervivencia (3 vidas)</option>
-            <option value="perfectionist">⭐ Perfeccionista (solo 1ra pista)</option>
+            <option value="perfectionist">⭐ Perfeccionista (solo 1ª pista)</option>
           </select>
         </div>
 
@@ -53,10 +55,12 @@
             <option value="animacion">🎨 Animación</option>
             <option value="ciencia-ficcion">🚀 Ciencia Ficción</option>
             <option value="comedia">😂 Comedia</option>
+            <option value="romance">❤️ Romance</option>
             <option value="drama">🎭 Drama</option>
             <option value="terror">👻 Terror</option>
-            <option value="clasicos">🎞️ Clásicos</option>
+            <option value="fantasia">🧙 Fantasía</option>
             <option value="superheroes">🦸 Superhéroes</option>
+            <option value="clasicos">🎞️ Clásicos</option>
           </select>
         </div>
 
@@ -120,7 +124,7 @@
         <span class="clue-dot" data-index="5"></span>
       </div>
 
-      <input type="text" id="answerInput" placeholder="Escribe el título de la película..." autocomplete="off">
+      <input type="text" id="answerInput" placeholder="Escribe el título de la película..." autocomplete="off" autofocus>
 
       <div class="button-group">
         <button id="checkBtn">✅ Comprobar</button>
@@ -145,8 +149,15 @@
         <div class="final-stat">💡 Promedio pistas: <span id="avgClues">0</span></div>
         <div class="final-stat">🔥 Racha máxima: <span id="maxStreak">0</span></div>
         <div class="final-stat" id="performance">¡Buen trabajo!</div>
-        <div id="achievements" class="achievements"></div>
+
+        <div id="achievements" class="achievements">
+          <h3>🏅 Logros Desbloqueados</h3>
+          <div id="achievementsList">
+            <!-- Los logros se insertan aquí con JavaScript -->
+          </div>
+        </div>
       </div>
+
       <button class="btn-full btn-large" id="restartBtn">🔄 Jugar de Nuevo</button>
     </div>
   </div>

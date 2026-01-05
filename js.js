@@ -150,6 +150,55 @@ const MOVIES = [
 { title: "Alicia en el País de las Maravillas", alt: [], genre: "fantasia", difficulty: "easy", clues: ["🐰⏰🍄","Mundo absurdo","Sombrerero","Reina corazones","Lewis Carroll","1951"]},
 { title: "La Historia Interminable", alt: [], genre: "fantasia", difficulty: "medium", clues: ["🐉📖🌌","Libro mágico","Fantasía","Atreyu","Auryn","1984"]},
 
+// === 50 PELÍCULAS EXTRA ===
+
+// COMEDIA
+{ title: "El Diablo Viste de Prada", alt: [], genre: "comedia", difficulty: "easy", clues: ["👠📰👩‍💼","Moda revista","Jefa imposible","Meryl Streep","That’s all","2006"]},
+{ title: "Resacón en Las Vegas", alt: ["The Hangover"], genre: "comedia", difficulty: "easy", clues: ["🍺🐯🕶️","Despedida soltero","Amnesia","Bebé inesperado","Vegas","2009"]},
+{ title: "Scary Movie", alt: [], genre: "comedia", difficulty: "easy", clues: ["😱😂📞","Parodia terror","Asesino torpe","Referencias cine","Wazzup","2000"]},
+{ title: "Ocho Apellidos Vascos", alt: [], genre: "comedia", difficulty: "easy", clues: ["🇪🇸❤️😂","Andaluz País Vasco","Choque cultural","Boda falsa","Taquillazo español","2014"]},
+{ title: "Zoolander", alt: [], genre: "comedia", difficulty: "easy", clues: ["🕶️📸🤨","Modelo tonto","Mirada Blue Steel","Ben Stiller","Moda absurda","2001"]},
+
+// ROMANCE
+{ title: "Pretty Woman", alt: [], genre: "romance", difficulty: "easy", clues: ["👗❤️💼","Cenicienta moderna","Hotel lujo","Julia Roberts","Richard Gere","1990"]},
+{ title: "Love Actually", alt: [], genre: "romance", difficulty: "easy", clues: ["🎄❤️✉️","Historias cruzadas","Navidad","Carteles amor","Londres","2003"]},
+{ title: "Bajo la Misma Estrella", alt: [], genre: "romance", difficulty: "easy", clues: ["📘🎢💔","Amor adolescentes","Cáncer","Amsterdam","Okay? Okay.","2014"]},
+{ title: "Antes del Amanecer", alt: ["Before Sunrise"], genre: "romance", difficulty: "medium", clues: ["🚶‍♂️🚶‍♀️🌅","Conversaciones Viena","Una noche","Trilogía","Amor realista","1995"]},
+
+// DRAMA
+{ title: "Réquiem por un Sueño", alt: ["Requiem for a Dream"], genre: "drama", difficulty: "hard", clues: ["💊📺😵","Adicción","Montaje frenético","Ellen Burstyn","Final devastador","2000"]},
+{ title: "El Pianista", alt: [], genre: "drama", difficulty: "medium", clues: ["🎹🕍🪖","Holocausto","Músico judío","Adrien Brody","Supervivencia","2002"]},
+{ title: "American Beauty", alt: [], genre: "drama", difficulty: "medium", clues: ["🌹🏠😔","Crisis suburbana","Bolsa volando","Kevin Spacey","Sueño americano","1999"]},
+{ title: "Manchester frente al Mar", alt: ["Manchester by the Sea"], genre: "drama", difficulty: "hard", clues: ["❄️🌊😢","Duelo familiar","Pueblo costero","Casey Affleck","Dolor silencioso","2016"]},
+{ title: "El Curioso Caso de Benjamin Button", alt: [], genre: "drama", difficulty: "medium", clues: ["⏳👶👴","Nace anciano","Vida inversa","Brad Pitt","Amor tiempo","2008"]},
+
+// ACCIÓN
+{ title: "Arma Letal", alt: ["Lethal Weapon"], genre: "accion", difficulty: "easy", clues: ["🔫👮‍♂️😂","Policías opuestos","Pareja explosiva","Mel Gibson","Navidad acción","1987"]},
+{ title: "El Protector", alt: ["The Equalizer"], genre: "accion", difficulty: "medium", clues: ["📖🔨⚖️","Justiciero solitario","Denzel Washington","Venganza","Reloj cuenta","2014"]},
+{ title: "Distrito 9", alt: [], genre: "ciencia-ficcion", difficulty: "medium", clues: ["👽🏚️🔫","Alienígenas apartheid","Falso documental","Johannesburgo","Metáfora social","2009"]},
+{ title: "V de Vendetta", alt: [], genre: "accion", difficulty: "medium", clues: ["🎭🔥🎆","Revolución","Máscara Guy Fawkes","Remember remember","Totalitarismo","2005"]},
+{ title: "Snowpiercer", alt: [], genre: "accion", difficulty: "medium", clues: ["🚆❄️⚔️","Tren postapocalíptico","Clases sociales","Chris Evans","Bong Joon-ho","2013"]},
+
+// TERROR
+{ title: "La Bruja", alt: ["The VVitch"], genre: "terror", difficulty: "hard", clues: ["🐐🌲😱","Puritanos","Bosque","Terror lento","Black Phillip","2015"]},
+{ title: "REC", alt: [], genre: "terror", difficulty: "easy", clues: ["📹🏢🧟","Cámara mano","Edificio infectado","Periodista","Terror español","2007"]},
+{ title: "Saw", alt: [], genre: "terror", difficulty: "easy", clues: ["🪚⏱️😨","Juegos macabros","Decisiones morales","Muñeco bici","Giro final","2004"]},
+{ title: "La Noche de Halloween", alt: ["Halloween"], genre: "terror", difficulty: "easy", clues: ["🎃🔪😶","Asesino máscara","Michael Myers","Babysitter","Clásico slasher","1978"]},
+
+// ANIMACIÓN
+{ title: "Bambi", alt: [], genre: "animacion", difficulty: "easy", clues: ["🦌🌲💔","Crecimiento","Madre tragedia","Naturaleza","Disney clásico","1942"]},
+{ title: "Pocahontas", alt: [], genre: "animacion", difficulty: "easy", clues: ["🍃🛶❤️","Amor culturas","Colonos","Colores viento","Disney","1995"]},
+{ title: "El Planeta del Tesoro", alt: [], genre: "animacion", difficulty: "medium", clues: ["🚀🏴‍☠️🗺️","Piratas espacio","Mapa","Disney infravalorada","2002"]},
+{ title: "Los Mitchell contra las Máquinas", alt: [], genre: "animacion", difficulty: "easy", clues: ["🤖📱👨‍👩‍👧","IA rebelde","Familia disfuncional","Viaje carretera","Netflix","2021"]},
+{ title: "Hotel Transilvania", alt: [], genre: "animacion", difficulty: "easy", clues: ["🧛‍♂️🏨😂","Monstruos vacaciones","Drácula padre","Humor familiar","Sony","2012"]},
+
+// FANTASÍA / AVENTURA
+{ title: "Willow", alt: [], genre: "fantasia", difficulty: "medium", clues: ["🧙‍♂️⚔️👶","Aventura épica","Enano héroe","Ron Howard","Fantasía clásica","1988"]},
+{ title: "Stardust", alt: [], genre: "fantasia", difficulty: "medium", clues: ["🌠❤️⚔️","Estrella humana","Reinos mágicos","Piratas voladores","Cuento adulto","2007"]},
+{ title: "La Momia", alt: [], genre: "aventura", difficulty: "easy", clues: ["🧟‍♂️🏺🐫","Egipto maldición","Aventura pulp","Brendan Fraser","Acción divertida","1999"]},
+{ title: "Ready Player One", alt: [], genre: "ciencia-ficcion", difficulty: "easy", clues: ["🎮🕶️🏁","Realidad virtual","Referencias 80s","Easter eggs","Spielberg","2018"]},
+{ title: "Tron: Legacy", alt: [], genre: "ciencia-ficcion", difficulty: "medium", clues: ["💡🏍️🌐","Mundo digital","Motos luz","Daft Punk","Rejilla","2010"]},
+
   
   // Puedes seguir añadiendo más si quieres, ¡hay espacio de sobra!
 ];
