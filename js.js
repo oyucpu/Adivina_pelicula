@@ -48,7 +48,7 @@ const MOVIES = [
   { title: "Forrest Gump", alt: [], genre: "drama", difficulty: "easy", clues: ["🏃‍♂️🍫🇺🇸","Vida extraordinaria","Caja chocolates","Jenny amor","Tom Hanks","1994"]},
   { title: "El Club de la Lucha", alt: ["Fight Club", "El club de la pelea"], genre: "drama", difficulty: "medium", clues: ["🥊🧼🔥","No hables club","Doble identidad","Brad Pitt","Final sorpresa","1999"]},
   { title: "La Lista de Schindler", alt: ["Schindler's List"], genre: "drama", difficulty: "easy", clues: ["📜🕊️🕯️","Holocausto","Abrigo rojo","Salvar judíos","Spielberg","1993"]},
-  { title: "Cadena Perpetua", alt: ["The Shawshank Redemption","Sueños de libertad","scape a la libertad"], genre: "drama", difficulty: "easy", clues: ["🔒🔨🌧️","Prisión injusta","Esperanza","Andy Dufresne","Red narrador","1994"]},
+  { title: "Cadena Perpetua", alt: ["The Shawshank Redemption","Sueños de libertad","Escape a la libertad"], genre: "drama", difficulty: "easy", clues: ["🔒🔨🌧️","Prisión injusta","Esperanza","Andy Dufresne","Red narrador","1994"]},
   { title: "Parásitos", alt: ["Parasite"], genre: "drama", difficulty: "medium", clues: ["🏠⬆️⬇️🍑","Clases sociales","Familia infiltrada","Casa moderna","Corea del Sur","2019"]},
 
   // TERROR
@@ -78,7 +78,7 @@ const MOVIES = [
   { title: "2001: Una Odisea del Espacio", alt: ["2001: A Space Odyssey","2001: Odisea del espacio"], genre: "ciencia-ficcion", difficulty: "hard", clues: ["🪐🤖🎶","Monolito HAL","Kubrick","Thus Spake Zarathustra","Evolución","1968"]},
   { title: "Inglourious Basterds", alt: ["Bastardos sin gloria","Malditos bastardos"], genre: "drama", difficulty: "medium", clues: ["🎥🔥🏞️","Judíos cazan nazis","Tarantino","Cinema quemado","Brad Pitt","2009"]},
   { title: "Django Desencadenado", alt: ["Django Unchained","Django sin cadenas"], genre: "drama", difficulty: "medium", clues: ["🤠🔫🌵","Esclavo venganza","Dentista cazarrecompensas","Jamie Foxx","Tarantino","2012"]},
-  { title: "Once Upon a Time in Hollywood", alt: ["Érase una vez en Hollywood"Había una vez en Hollywood,], genre: "drama", difficulty: "medium", clues: ["🌴🎬😎","Los Ángeles 1969","Manson familia","DiCaprio Pitt","Tarantino final alternativo","2019"]},
+  { title: "Once Upon a Time in Hollywood", alt: ["Érase una vez en Hollywood","Había una vez en Hollywood"], genre: "drama", difficulty: "medium", clues: ["🌴🎬😎","Los Ángeles 1969","Manson familia","DiCaprio Pitt","Tarantino final alternativo","2019"]},
   { title: "Mi Vecino Totoro", alt: ["My Neighbor Totoro"], genre: "animacion", difficulty: "easy", clues: ["🌳🚌😺","Criaturas bosque","Ghibli","Catbus","Lluvia semillas","1988"]},
   { title: "Princesa Mononoke", alt: [], genre: "animacion", difficulty: "medium", clues: ["🐺🏹🌲","Hombre vs naturaleza","San loba","Ghibli espíritus","1997"]},
   { title: "La Tumba de las Luciérnagas", alt: ["Grave of the Fireflies"], genre: "animacion", difficulty: "hard", clues: ["🔥🍬😢","Hermanos guerra Japón","Ghibli triste","Luciérnagas","1988"]},
